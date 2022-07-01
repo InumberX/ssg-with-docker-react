@@ -1,6 +1,6 @@
 import type { MinistaLocation } from 'minista'
 import { Head } from 'minista'
-import pjt from '../project.json'
+import siteInfo from '~/config/siteInfo.json'
 import { LayoutWrapper } from '~/layouts/Wrapper'
 import { FrontmatterProps } from '~/types/frontmatterProps'
 
@@ -11,7 +11,7 @@ type RootProps = {
 }
 
 const Root = ({ location, frontmatter, children }: RootProps) => {
-  const site = pjt.site
+  const site = siteInfo.site
   const siteTitle = site.title
   const siteDescription = site.description
   const siteUrl = site.url
