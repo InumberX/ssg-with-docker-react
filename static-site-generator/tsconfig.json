@@ -9,6 +9,7 @@
     "noErrorTruncation": true,
     "jsx": "react-jsx",
     "types": ["minista/client"],
+    "typeRoots": ["node_modules", "src/types"],
     "paths": {
       "~/*": ["./src/*"]
     }
