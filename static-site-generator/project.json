@@ -1,0 +1,11 @@
+{
+  "name": "static-site-generator-with-docker-react",
+  "site": {
+    "title": "Example",
+    "description": "",
+    "url": "https://example.com",
+    "twitter": {
+      "id": ""
+    }
+  }
+}

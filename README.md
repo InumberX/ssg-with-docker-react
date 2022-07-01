@@ -1,1 +1,1 @@
-# ssg-with-docker-react
+# Static Site Generator with Docker React
