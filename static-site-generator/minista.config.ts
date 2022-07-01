@@ -28,12 +28,12 @@ export default defineConfig({
         insertPages: [],
       },
     ],
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        style: 'expanded',
-      },
+    images: {
+      outDir: 'assets/img',
+      outName: '[name]',
     },
+  },
+  beautify: {
+    useAssets: true,
   },
 })
