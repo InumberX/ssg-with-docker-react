@@ -5,7 +5,7 @@ const __dirname = path.dirname(__filename)
 import { defineConfig } from 'minista'
 
 export default defineConfig({
-  base: '',
+  base: './',
   vite: {
     server: {
       host: true,
