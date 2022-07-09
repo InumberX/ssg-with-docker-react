@@ -1,7 +1,7 @@
 import { FrontmatterProps } from '~/types/frontmatterProps'
 
 type HeaderProps = {
-  frontmatter?: FrontmatterProps
+  frontmatter: FrontmatterProps
 }
 
 export const Header = ({ frontmatter }: HeaderProps) => {

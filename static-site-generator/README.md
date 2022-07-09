@@ -34,6 +34,20 @@ http://localhost:3000/
 
 - Press "Ctrl + C" to stop
 
+### Execution of Storybook
+
+Execute the following command.
+
+```shell
+docker compose exec node npm run storybook
+```
+
+The following URL will take you to the screen.
+
+http://localhost:6006/
+
+- Press "Ctrl + C" to stop
+
 ### Build
 
 Execute the following command to execute the build.
