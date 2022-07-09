@@ -12,7 +12,7 @@ export const LayoutDefault = ({ frontmatter, children }: LayoutDefaultProps) => 
     <>
       <Header frontmatter={frontmatter} />
       <main className="LayoutMain">{children}</main>
-      <Footer />
+      <Footer frontmatter={frontmatter} />
     </>
   )
 }

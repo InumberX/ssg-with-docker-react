@@ -6,6 +6,7 @@ services:
       - ./:/var/opt/project
     ports:
       - "3000:3000"
+      - "6006:6006"
     working_dir: /var/opt/project
     tty: true
     environment:
