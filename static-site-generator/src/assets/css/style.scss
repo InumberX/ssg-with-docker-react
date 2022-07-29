@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+@use '../scss/common/base';
+
 @use '../../components/common/Header/style' as styleHeader;
 
 @use '../../components/common/Footer/style' as styleFooter;

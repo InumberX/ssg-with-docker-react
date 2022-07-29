@@ -1,16 +1,22 @@
 .LayoutHeader {
   padding: 24px 0;
-  ul {
+}
+
+.HeaderMenu {
+  &__items {
     display: flex;
     flex-wrap: wrap;
     margin: -24px 0 0 -24px;
     padding: 0;
     list-style: none;
   }
-  li {
+
+  &__item {
     padding: 24px 0 0 24px;
-    a {
-      text-decoration: none;
-    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
   }
 }
