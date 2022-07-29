@@ -16,6 +16,7 @@ const Root = ({ location, frontmatter, children }: RootProps) => {
   const siteDescription = site.description
   const siteUrl = site.url
   const title = frontmatter?.title ? `${frontmatter?.title} | ${siteTitle}` : siteTitle
+  const description = frontmatter.description || siteDescription
   const ogUrl = `${siteUrl}${location.pathname}`
   const ogImage = siteUrl + '/assets/images/ogp.png'
   const ogType = location.pathname === '/' ? 'website' : 'article'
@@ -32,9 +33,9 @@ const Root = ({ location, frontmatter, children }: RootProps) => {
           content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no,viewport-fit=cover"
         />
         <title>{title}</title>
-        <meta name="description" content={siteDescription} />
+        <meta name="description" content={description} />
         <meta property="og:title" content={title} />
-        <meta property="og:description" content={siteDescription} />
+        <meta property="og:description" content={description} />
         <meta property="og:url" content={ogUrl} />
         <meta property="og:image" content={ogImage} />
         <meta property="og:site_name" content={siteTitle} />
