@@ -1,0 +1,37 @@
+// 変数 ==========
+// フォント =====
+// デフォルト
+$Font__main: '游ゴシック Medium', 'Yu Gothic', YuGothic, YuGothicMedium, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+
+// ブレイクポイント =====
+$Bp--xs: 321px;
+$Bp--sm: 576px;
+$Bp--md: 768px;
+$Bp--lg: 992px;
+$Bp--xl: 1200px;
+$Bp--xxl: 1400px;
+
+// カラー =====
+// パレット
+$Palette__white: #fff;
+$Palette__black: #000;
+
+// z-index =====
+// 汎用
+$ZIndex--1: 1;
+$ZIndex--2: 2;
+$ZIndex--3: 3;
+$ZIndex--4: 4;
+$ZIndex--5: 5;
+
+// モーダル
+$ZIndex__modal--1: 20000;
+
+// ヘッダー
+$ZIndex__header--1: 10000;
+
+// フッター
+$ZIndex__footer--1: 8000;
+
+// 透明度 =====
+$Opacity__main: 0.6;

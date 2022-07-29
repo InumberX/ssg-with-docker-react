@@ -5,8 +5,8 @@ export const frontmatter: FrontmatterProps = {
   rootDir: './',
 }
 
-const PageHome = () => {
+const Page = () => {
   return <LayoutDefault frontmatter={frontmatter}>トップページ</LayoutDefault>
 }
 
-export default PageHome
+export default Page

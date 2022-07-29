@@ -6,8 +6,8 @@ export const frontmatter: FrontmatterProps = {
   title: 'サンプル',
 }
 
-const PageHome = () => {
+const Page = () => {
   return <LayoutDefault frontmatter={frontmatter}>下層ページ</LayoutDefault>
 }
 
-export default PageHome
+export default Page
