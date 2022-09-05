@@ -1,0 +1,39 @@
+// Variables ==========
+
+// Fonts ========
+// Family ======
+// Default
+$font-main: '游ゴシック Medium', 'Yu Gothic', YuGothic, YuGothicMedium, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+
+// Weight ======
+$font-medium: 500;
+$font-bold: 700;
+
+// Blakepoints ========
+$bp-xs: 321px;
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+$bp-xxl: 1400px;
+
+// Color ========
+$palette-white: #fff;
+$palette-black: #000;
+
+// Z Index ========
+// Common ======
+$z_index-1: 1;
+$z_index-2: 2;
+$z_index-3: 3;
+$z_index-4: 4;
+$z_index-5: 5;
+
+// Modal ======
+$z_index-modal-1: 20000;
+
+// Header ======
+$z_index-header-1: 10000;
+
+// Opacity ========
+$opacity-main: 0.6;
