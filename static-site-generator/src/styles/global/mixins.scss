@@ -1,0 +1,52 @@
+@use './variables' as v;
+
+@use 'sass:math';
+
+// Media Query
+@mixin mxMediaQueryXs() {
+  @media screen and (min-width: v.$bp-xs), print {
+    @content;
+  }
+}
+
+@mixin mxMediaQuerySm() {
+  @media screen and (min-width: v.$bp-sm), print {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryMd() {
+  @media screen and (min-width: v.$bp-md), print {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryLg() {
+  @media screen and (min-width: v.$bp-lg), print {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryXl() {
+  @media screen and (min-width: v.$bp-xl), print {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryXxl() {
+  @media screen and (min-width: v.$bp-xxl), print {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryPrint() {
+  @media print {
+    @content;
+  }
+}
+
+@mixin mxMediaHover() {
+  @media (hover: hover) {
+    @content;
+  }
+}

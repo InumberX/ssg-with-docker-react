@@ -1,5 +1,9 @@
 @charset "utf-8";
 
-@use '../../components/common/Header/style' as styleHeader;
+@use '../../styles/common/base';
 
-@use '../../components/common/Footer/style' as styleFooter;
+@use '../../components/common/Header/style' as styleCommonHeader;
+
+@use '../../components/common/Footer/style' as styleCommonFooter;
+
+@use '../../components/layout/Inner/style' as styleLayoutInner;
