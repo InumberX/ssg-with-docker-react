@@ -31,6 +31,7 @@ body {
   background-size: cover;
   background-attachment: fixed;
   font-family: g.$Font__main;
+  font-weight: g.$Font__medium;
   font-size: 1.6rem;
 }
 article,
@@ -109,7 +110,7 @@ a {
     color: g.$Palette__black;
     text-decoration: none;
   }
-  @media (hover: hover) {
+  @include g.mxMediaHover() {
     &:hover,
     &:active {
       color: g.$Palette__black;
@@ -128,7 +129,7 @@ address {
 b,
 strong,
 em {
-  font-weight: 700;
+  font-weight: g.$Font__bold;
 }
 dfn {
   font-style: italic;
@@ -185,7 +186,7 @@ td,
 th {
   padding: 0;
 }
-@include g.mxMediaQuery(g.$Bp--sm) {
+@include g.mxMediaQuerySm {
   body {
     font-size: 1.6rem;
   }
@@ -240,7 +241,7 @@ th {
 .Obj--xs:not(:root) {
   display: block;
 }
-@include g.mxMediaQuery(g.$Bp--xs) {
+@include g.mxMediaQueryXs {
   .Obj--xs:not(:root) {
     display: none;
   }
@@ -248,7 +249,7 @@ th {
     display: block;
   }
 }
-@include g.mxMediaQuery(g.$Bp--sm) {
+@include g.mxMediaQuerySm {
   .Obj--sm:not(:root) {
     display: none;
   }
@@ -256,7 +257,7 @@ th {
     display: block;
   }
 }
-@include g.mxMediaQuery(g.$Bp--md) {
+@include g.mxMediaQueryMd {
   .Obj--md:not(:root) {
     display: none;
   }
@@ -264,7 +265,7 @@ th {
     display: block;
   }
 }
-@include g.mxMediaQuery(g.$Bp--lg) {
+@include g.mxMediaQueryLg {
   .Obj--lg:not(:root) {
     display: none;
   }
