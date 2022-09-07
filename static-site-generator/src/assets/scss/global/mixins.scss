@@ -1,6 +1,7 @@
+@use './variables' as v;
 @use 'sass:math';
 
-// 線の矢印
+// Arrow line
 @mixin mxArrowLine(
   $width-and-height,
   $top,
@@ -53,7 +54,7 @@
   @content;
 }
 
-// 三角形
+// Triangle
 @mixin mxTriangle(
   $width,
   $height,
@@ -105,9 +106,51 @@
   @content;
 }
 
-// メディアクエリ
-@mixin mxMediaQuery($bp) {
-  @media screen and (min-width: $bp), print {
+// Media Query
+@mixin mxMediaQueryXs() {
+  @media screen and (min-width: v.$Bp--xs), print {
+    @content;
+  }
+}
+
+@mixin mxMediaQuerySm() {
+  @media screen and (min-width: v.$Bp--sm), print {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryMd() {
+  @media screen and (min-width: v.$Bp--md), print {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryLg() {
+  @media screen and (min-width: v.$Bp--lg), print {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryXl() {
+  @media screen and (min-width: v.$Bp--xl), print {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryXxl() {
+  @media screen and (min-width: v.$Bp--xxl), print {
+    @content;
+  }
+}
+
+@mixin mxMediaQueryPrint() {
+  @media print {
+    @content;
+  }
+}
+
+@mixin mxMediaHover() {
+  @media (hover: hover) {
     @content;
   }
 }

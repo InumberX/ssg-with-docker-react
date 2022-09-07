@@ -1,5 +1,7 @@
+import { ReactNode } from 'react'
+
 type LayoutWrapperProps = {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 export const LayoutWrapper = ({ children }: LayoutWrapperProps) => {
