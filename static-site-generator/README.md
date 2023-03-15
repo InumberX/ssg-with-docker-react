@@ -17,7 +17,7 @@ docker compose up -d
 Install the Node.js package.
 
 ```shell
-docker compose exec node npm install
+docker compose exec node yarn install
 ```
 
 ### Execution of development tasks
@@ -25,7 +25,7 @@ docker compose exec node npm install
 Execute the following command.
 
 ```shell
-docker compose exec node npm run dev
+docker compose exec node yarn dev
 ```
 
 The following URL will take you to the screen.
@@ -39,7 +39,7 @@ http://localhost:3000/
 Execute the following command.
 
 ```shell
-docker compose exec node npm run storybook
+docker compose exec node yarn storybook
 ```
 
 The following URL will take you to the screen.
@@ -53,7 +53,7 @@ http://localhost:6006/
 Execute the following command to execute the build.
 
 ```shell
-docker compose exec node npm run build
+docker compose exec node yarn build
 ```
 
 ### Stopping Containers

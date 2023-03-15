@@ -13,7 +13,6 @@ html {
   width: 100%;
   height: 100%;
   line-height: 1;
-  font-size: 62.5%;
   background: g.$Palette__white;
   color: g.$Palette__black;
 }
@@ -32,7 +31,14 @@ body {
   background-attachment: fixed;
   font-family: g.$Font__main;
   font-weight: g.$Font__medium;
-  font-size: 1.6rem;
+  @include g.mxGetFontSize(16);
+
+  &.Body--fixed {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 article,
 aside,
@@ -72,7 +78,7 @@ li {
   overflow-wrap: break-word;
   -webkit-word-wrap: break-word;
   word-wrap: break-word;
-  font-size: 1.6rem;
+  @include g.mxGetFontSize(16);
 }
 ul,
 ol {
@@ -117,6 +123,9 @@ a {
       text-decoration: none;
     }
   }
+}
+button {
+  cursor: pointer;
 }
 abbr[title] {
   border-bottom: 1px dotted;
@@ -176,7 +185,7 @@ kbd,
 pre,
 samp {
   font-family: g.$Font__main;
-  font-size: 1em;
+  @include g.mxGetFontSize(10);
 }
 table {
   border-collapse: collapse;
@@ -188,7 +197,7 @@ th {
 }
 @include g.mxMediaQuerySm {
   body {
-    font-size: 1.6rem;
+    @include g.mxGetFontSize(16);
   }
   h1,
   h2,
@@ -204,10 +213,10 @@ th {
   ul,
   ol,
   li {
-    font-size: 1.6rem;
+    @include g.mxGetFontSize(16);
   }
   p {
-    font-size: 1.6rem;
+    @include g.mxGetFontSize(16);
   }
 }
 
