@@ -5,6 +5,9 @@
 // Default
 $Font__main: '游ゴシック Medium', 'Yu Gothic', YuGothic, YuGothicMedium, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
 
+// Size
+$Font__size: 16;
+
 // Weight
 $Font__medium: 500;
 $Font__bold: 700;
@@ -40,3 +43,6 @@ $ZIndex__footer--1: 8000;
 
 // Opacity ========
 $Opacity__main: 0.6;
+
+// Scale ========
+$Scale__hover: 1.1;
