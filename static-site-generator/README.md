@@ -25,12 +25,12 @@ docker compose exec node yarn install
 Execute the following command.
 
 ```shell
-docker compose exec node yarn dev
+docker compose exec node yarn dev --host
 ```
 
 The following URL will take you to the screen.
 
-http://localhost:3000/
+http://localhost:5173/
 
 - Press "Ctrl + C" to stop
 
