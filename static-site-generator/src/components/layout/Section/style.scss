@@ -1,13 +1,13 @@
-@use '../../../assets/scss/global/' as g;
+@use '~/assets/scss/global/' as *;
 
 .LayoutSection {
   padding: 24px 0;
 
-  @include g.mxMediaQuerySm() {
+  @include mxMediaQuerySm() {
     padding: 32px 0;
   }
 
-  @include g.mxMediaQueryMd() {
+  @include mxMediaQueryMd() {
     padding: 40px 0;
   }
 }

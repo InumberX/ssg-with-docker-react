@@ -1,11 +1,11 @@
-import type { MinistaLocation } from 'minista'
+import type { Location } from 'minista'
 import { Head } from 'minista'
 import siteInfo from '~/config/siteInfo.json'
 import { LayoutWrapper } from '~/layouts/Wrapper'
 import { FrontmatterProps } from '~/types/frontmatterProps'
 
 type RootProps = {
-  location: MinistaLocation
+  location: Location
   frontmatter?: FrontmatterProps
   children: React.ReactNode
 }
@@ -23,7 +23,7 @@ const Root = ({ location, frontmatter, children }: RootProps) => {
   const twitterCard = 'summary_large_image'
   const twitterId = site.twitter?.id ? `@${site.twitter.id}` : ''
   const noindex = frontmatter?.noindex || false
-  const favicon = `${frontmatter.rootDir}assets/img/favicon.png`
+  const favicon = `${frontmatter.rootDir}favicon.png`
   return (
     <>
       <Head>
@@ -45,6 +45,8 @@ const Root = ({ location, frontmatter, children }: RootProps) => {
         {noindex && <meta name="robots" content="noindex" />}
         <link rel="icon" href={favicon} />
         <link rel="canonical" href={ogUrl} />
+        <script src={`${frontmatter.rootDir}assets/js/lib/jquery.min.js`} defer />
+        <script src={`${frontmatter.rootDir}assets/js/common.js`} defer />
       </Head>
       <LayoutWrapper>{children}</LayoutWrapper>
     </>

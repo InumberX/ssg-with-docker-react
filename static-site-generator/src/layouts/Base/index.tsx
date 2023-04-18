@@ -6,12 +6,13 @@ import { FrontmatterProps } from '~/types/frontmatterProps'
 type LayoutDefaultProps = {
   frontmatter?: FrontmatterProps
   children: ReactNode
+  isLogoTitle?: boolean
 }
 
-export const LayoutDefault = ({ frontmatter, children }: LayoutDefaultProps) => {
+export const LayoutDefault = ({ frontmatter, children, isLogoTitle }: LayoutDefaultProps) => {
   return (
     <>
-      <Header frontmatter={frontmatter} />
+      <Header frontmatter={frontmatter} isLogoTitle={isLogoTitle} />
       <main className="LayoutMain">{children}</main>
       <Footer frontmatter={frontmatter} />
     </>

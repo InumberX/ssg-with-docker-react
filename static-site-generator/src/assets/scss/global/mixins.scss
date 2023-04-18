@@ -1,39 +1,39 @@
-@use './variables' as v;
+@use './variables' as *;
 @use 'sass:math';
 
 // Media Query
 @mixin mxMediaQueryXs() {
-  @media screen and (min-width: v.$Bp--xs), print {
+  @media screen and (min-width: $blakepoint-xs), print {
     @content;
   }
 }
 
 @mixin mxMediaQuerySm() {
-  @media screen and (min-width: v.$Bp--sm), print {
+  @media screen and (min-width: $blakepoint-sm), print {
     @content;
   }
 }
 
 @mixin mxMediaQueryMd() {
-  @media screen and (min-width: v.$Bp--md), print {
+  @media screen and (min-width: $blakepoint-md), print {
     @content;
   }
 }
 
 @mixin mxMediaQueryLg() {
-  @media screen and (min-width: v.$Bp--lg), print {
+  @media screen and (min-width: $blakepoint-lg), print {
     @content;
   }
 }
 
 @mixin mxMediaQueryXl() {
-  @media screen and (min-width: v.$Bp--xl), print {
+  @media screen and (min-width: $blakepoint-xl), print {
     @content;
   }
 }
 
 @mixin mxMediaQueryXxl() {
-  @media screen and (min-width: v.$Bp--xxl), print {
+  @media screen and (min-width: $blakepoint-xxl), print {
     @content;
   }
 }
@@ -51,51 +51,44 @@
 }
 
 // Font
-@mixin mxGetFontSize($Font__sizePx) {
-  font-size: math.div($Font__sizePx, v.$Font__size) * 1rem;
+@mixin mxGetFontSize($font-size-px) {
+  font-size: math.div($font-size-px, $font-size) * 1rem;
 }
 
 // Lists
-@mixin mxGetMarginListItems($Margin__top, $Margin__left) {
-  margin: (-$Margin__top) 0 0 (-$Margin__left);
+@mixin mxGetMarginListItems($margin-top, $margin-left) {
+  margin: (-$margin-top) 0 0 (-$margin-left);
 }
 
-@mixin mxGetPaddingListItem($Padding__top, $Padding__left) {
-  padding: $Padding__top 0 0 $Padding__left;
+@mixin mxGetPaddingListItem($padding-top, $padding-left) {
+  padding: $padding-top 0 0 $padding-left;
 }
 
 // Arrow
-@mixin mxArrowLine($WidthAndHeight, $Position, $Margin, $Border__width, $Border__color, $Deg) {
+@mixin mxArrowLine($width-and-height, $border-width, $border-color, $deg) {
   content: '';
-  position: absolute;
   display: block;
-  width: $WidthAndHeight;
-  height: $WidthAndHeight;
-  @each $Key, $Val in $Position {
-    #{$Key}: $Val;
-  }
-  @each $Key, $Val in $Margin {
-    #{$Key}: $Val;
-  }
-  border-left: $Border__width solid $Border__color;
-  border-bottom: $Border__width solid $Border__color;
-  @if ($Deg != '') {
-    transform: rotate($Deg);
+  width: $width-and-height;
+  height: $width-and-height;
+  border-left: $border-width solid $border-color;
+  border-bottom: $border-width solid $border-color;
+  @if ($deg != '') {
+    transform: rotate($deg);
   }
   transition: 0.3s border-color, 0.3s transform;
   @content;
 }
 
 // Triangle
-@mixin mxTriangle($Width, $Height, $Border__color, $Deg) {
+@mixin mxTriangle($width, $height, $border-color, $deg) {
   content: '';
   position: absolute;
   display: block;
-  border-top: $Height solid $Border__color;
-  border-right: math.div($Width, 2) solid transparent;
-  border-left: math.div($Width, 2) solid transparent;
-  @if ($Deg != '') {
-    transform: rotate($Deg);
+  border-top: $height solid $border-color;
+  border-right: math.div($width, 2) solid transparent;
+  border-left: math.div($width, 2) solid transparent;
+  @if ($deg != '') {
+    transform: rotate($deg);
   }
   transition: 0.3s border-color, 0.3s transform;
   @content;
