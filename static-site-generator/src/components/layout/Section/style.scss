@@ -3,11 +3,11 @@
 .LayoutSection {
   padding: 24px 0;
 
-  @include mxMediaQuerySm() {
+  @include mxMediaQuerySm {
     padding: 32px 0;
   }
 
-  @include mxMediaQueryMd() {
+  @include mxMediaQueryMd {
     padding: 40px 0;
   }
 }

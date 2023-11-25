@@ -6,9 +6,17 @@ type LayoutInnerProps = {
   size?: 'medium' | 'large'
 }
 
-export const LayoutInner = ({ children, className, size }: LayoutInnerProps) => {
+export const LayoutInner = ({
+  children,
+  className,
+  size,
+}: LayoutInnerProps) => {
   return (
-    <div className={`LayoutInner${size ? ' LayoutInner--' + size : ''}${className ? ' ' + className : ''}`}>
+    <div
+      className={`LayoutInner${size ? ' LayoutInner--' + size : ''}${
+        className ? ' ' + className : ''
+      }`}
+    >
       {children}
     </div>
   )

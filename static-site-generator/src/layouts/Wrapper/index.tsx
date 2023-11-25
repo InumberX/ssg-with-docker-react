@@ -5,5 +5,5 @@ type LayoutWrapperProps = {
 }
 
 export const LayoutWrapper = ({ children }: LayoutWrapperProps) => {
-  return <div className="LayoutWrapper">{children}</div>
+  return <div className='LayoutWrapper'>{children}</div>
 }

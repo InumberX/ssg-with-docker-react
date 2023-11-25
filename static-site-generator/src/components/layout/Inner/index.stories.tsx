@@ -1,19 +1,23 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { LayoutInner } from '.'
 
 export default {
   title: 'components/layout/Inner',
   component: LayoutInner,
-} as ComponentMeta<typeof LayoutInner>
+} as Meta<typeof LayoutInner>
 
-export const Default: ComponentStory<typeof LayoutInner> = () => {
-  return (
-    <LayoutInner>
-      <>
-        コンテンツが入ります
-        <br />
-        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-      </>
-    </LayoutInner>
-  )
+type Story = StoryObj<typeof LayoutInner>
+
+export const Default: Story = {
+  render: (args) => {
+    return (
+      <LayoutInner {...args}>
+        <>
+          コンテンツが入ります
+          <br />
+          テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        </>
+      </LayoutInner>
+    )
+  },
 }

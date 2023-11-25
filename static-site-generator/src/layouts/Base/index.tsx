@@ -9,11 +9,15 @@ type LayoutDefaultProps = {
   isLogoTitle?: boolean
 }
 
-export const LayoutDefault = ({ frontmatter, children, isLogoTitle }: LayoutDefaultProps) => {
+export const LayoutDefault = ({
+  frontmatter,
+  children,
+  isLogoTitle,
+}: LayoutDefaultProps) => {
   return (
     <>
       <Header frontmatter={frontmatter} isLogoTitle={isLogoTitle} />
-      <main className="LayoutMain">{children}</main>
+      <main className='LayoutMain'>{children}</main>
       <Footer frontmatter={frontmatter} />
     </>
   )

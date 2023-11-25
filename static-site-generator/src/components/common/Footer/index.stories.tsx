@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react'
 import { FrontmatterProps } from '../../../types/frontmatterProps'
 import { Footer } from '.'
 
@@ -9,8 +9,12 @@ const frontmatter: FrontmatterProps = {
 export default {
   title: 'components/common/Footer',
   component: Footer,
-} as ComponentMeta<typeof Footer>
+} as Meta<typeof Footer>
 
-export const Default: ComponentStory<typeof Footer> = () => {
-  return <Footer frontmatter={frontmatter} />
+type Story = StoryObj<typeof Footer>
+
+export const Default: Story = {
+  args: {
+    frontmatter,
+  },
 }

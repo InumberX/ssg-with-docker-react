@@ -3,10 +3,9 @@
 // Fonts ========
 // Family ======
 // Default
-$font-main: 游明朝, 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', HGS明朝E, serif, Times,
-  メイリオ, Meiryo;
-
-$font-en: Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+$font-main: 游明朝, 'Yu Mincho', yumincho, 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', hgs明朝e, serif, times,
+  メイリオ, meiryo;
+$font-en: optima, segoe, segoe ui, candara, calibri, arial, sans-serif;
 
 // Size
 $font-size: 16;
@@ -34,7 +33,6 @@ $z-index-2: 2;
 $z-index-3: 3;
 $z-index-4: 4;
 $z-index-5: 5;
-
 $z-index-minus-1: -1;
 $z-index-minus-2: -2;
 
