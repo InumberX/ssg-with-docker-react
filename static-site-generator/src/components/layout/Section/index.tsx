@@ -7,13 +7,26 @@ type LayoutSectionProps = {
   size?: 'large'
 }
 
-export const LayoutSection = ({ children, isNotSection, className, size }: LayoutSectionProps) => {
+export const LayoutSection = ({
+  children,
+  isNotSection,
+  className,
+  size,
+}: LayoutSectionProps) => {
   return isNotSection ? (
-    <div className={`LayoutSection${className ? ' ' + className : ''}${size ? ' LayoutSection--' + size : ''}`}>
+    <div
+      className={`LayoutSection${className ? ' ' + className : ''}${
+        size ? ' LayoutSection--' + size : ''
+      }`}
+    >
       {children}
     </div>
   ) : (
-    <section className={`LayoutSection${className ? ' ' + className : ''}${size ? ' LayoutSection--' + size : ''}`}>
+    <section
+      className={`LayoutSection${className ? ' ' + className : ''}${
+        size ? ' LayoutSection--' + size : ''
+      }`}
+    >
       {children}
     </section>
   )

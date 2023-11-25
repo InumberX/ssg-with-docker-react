@@ -15,7 +15,9 @@ const Root = ({ location, frontmatter, children }: RootProps) => {
   const siteTitle = site.title
   const siteDescription = site.description
   const siteUrl = site.url
-  const title = frontmatter?.title ? `${frontmatter?.title} | ${siteTitle}` : siteTitle
+  const title = frontmatter?.title
+    ? `${frontmatter?.title} | ${siteTitle}`
+    : siteTitle
   const description = frontmatter.description || siteDescription
   const ogUrl = `${siteUrl}${location.pathname}`
   const ogImage = siteUrl + '/assets/images/ogp.png'
@@ -27,25 +29,28 @@ const Root = ({ location, frontmatter, children }: RootProps) => {
   return (
     <>
       <Head>
-        <meta name="format-detection" content="telephone=no" />
+        <meta name='format-detection' content='telephone=no' />
         <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no,viewport-fit=cover"
+          name='viewport'
+          content='width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no,viewport-fit=cover'
         />
         <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:url" content={ogUrl} />
-        <meta property="og:image" content={ogImage} />
-        <meta property="og:site_name" content={siteTitle} />
-        <meta property="og:type" content={ogType} />
-        <meta name="twitter:card" content={twitterCard} />
-        {twitterId && <meta name="twitter:creator" content={twitterId} />}
-        {noindex && <meta name="robots" content="noindex" />}
-        <link rel="icon" href={favicon} />
-        <link rel="canonical" href={ogUrl} />
-        <script src={`${frontmatter.rootDir}assets/js/lib/jquery.min.js`} defer />
+        <meta name='description' content={description} />
+        <meta property='og:title' content={title} />
+        <meta property='og:description' content={description} />
+        <meta property='og:url' content={ogUrl} />
+        <meta property='og:image' content={ogImage} />
+        <meta property='og:site_name' content={siteTitle} />
+        <meta property='og:type' content={ogType} />
+        <meta name='twitter:card' content={twitterCard} />
+        {twitterId && <meta name='twitter:creator' content={twitterId} />}
+        {noindex && <meta name='robots' content='noindex' />}
+        <link rel='icon' href={favicon} />
+        <link rel='canonical' href={ogUrl} />
+        <script
+          src={`${frontmatter.rootDir}assets/js/lib/jquery.min.js`}
+          defer
+        />
         <script src={`${frontmatter.rootDir}assets/js/common.js`} defer />
       </Head>
       <LayoutWrapper>{children}</LayoutWrapper>

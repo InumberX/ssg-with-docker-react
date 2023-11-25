@@ -6,5 +6,5 @@ type FooterProps = {
 }
 
 export const Footer = ({ frontmatter }: FooterProps) => {
-  return <footer className="LayoutFooter"></footer>
+  return <footer className='LayoutFooter'></footer>
 }

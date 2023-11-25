@@ -2,15 +2,15 @@
 
 .LayoutInner {
   margin: 0 auto;
+  max-width: calc(1038px + (40px * 2));
   padding: 0 4vw;
   width: 100%;
-  max-width: calc(1038px + (40px * 2));
 
-  @include mxMediaQuerySm() {
+  @include mxMediaQuerySm {
     padding: 0 4.6vw;
   }
 
-  @include mxMediaQueryMd() {
+  @include mxMediaQueryMd {
     padding: 0 40px;
   }
 }
