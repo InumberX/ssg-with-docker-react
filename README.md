@@ -70,7 +70,7 @@ npm run format
 npm run format-fix
 ```
 
-### Formatter (SCSS)
+### Formatter (PostCSS)
 
 #### Check
 
@@ -183,7 +183,7 @@ docker compose exec frontend npm run format
 docker compose exec frontend npm run format-fix
 ```
 
-### Formatter (SCSS)
+### Formatter (PostCSS)
 
 #### Check
 

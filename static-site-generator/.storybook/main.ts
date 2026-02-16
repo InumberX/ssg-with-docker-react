@@ -40,8 +40,7 @@ const config: StorybookConfig = {
       config.resolve.alias = {
         ...config.resolve.alias,
         '~': path.resolve(__dirname, '../src'),
-        '~/assets/scss': path.resolve(__dirname, '../src/assets/scss'),
-        '~/style': path.resolve(__dirname, '../src/style'),
+        '../../components': path.resolve(__dirname, '../src/components'),
       }
     }
 

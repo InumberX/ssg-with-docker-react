@@ -8,7 +8,7 @@
     "build": "minista build",
     "preview": "minista preview",
     "clean": "trash ./dist",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev --no-open -p 6006",
     "build-storybook": "storybook build",
     "typecheck": "tsc -b",
     "lint": "eslint",
@@ -31,6 +31,7 @@
     "last 1 ChromeAndroid versions"
   ],
   "devDependencies": {
+    "@csstools/postcss-global-data": "^4.0.0",
     "@eslint/compat": "^2.0.2",
     "@eslint/js": "^9.39.2",
     "@storybook/addon-docs": "^10.2.8",
@@ -48,6 +49,11 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "globals": "^17.3.0",
     "minista": "^3.1.12",
+    "postcss": "^8.5.6",
+    "postcss-custom-media": "^12.0.0",
+    "postcss-import": "^16.1.1",
+    "postcss-mixins": "^12.1.2",
+    "postcss-nested": "^7.0.2",
     "prettier": "^3.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
