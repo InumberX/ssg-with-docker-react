@@ -26,8 +26,9 @@ const config: StorybookConfig = {
   viteFinal: async (config, { configType }) => {
     // Add your configuration here
     const configPath = path.resolve(__dirname, '../vite-storybook.config.ts')
+    const viteMode = configType === 'PRODUCTION' ? 'production' : 'development'
     const result = await loadConfigFromFile(
-      { mode: configType ?? 'development', command: 'build' },
+      { mode: viteMode, command: 'build' },
       configPath,
     )
     const userConfig = result?.config ?? {}
