@@ -12,5 +12,6 @@
 @import '../post-css/no-layer';
 @import '../../components/common/Footer/style.css';
 @import '../../components/common/Header/style.css';
-@import '../../components/layout/Inner/style.css';
-@import '../../components/layout/Section/style.css';
+@import '../../components/ui/layouts/Inner/style.css';
+@import '../../components/ui/layouts/PageWrapper/style.css';
+@import '../../components/ui/layouts/Section/style.css';

@@ -1,8 +1,8 @@
 import type { Location } from 'minista'
 import { Head } from 'minista'
 
+import { LayoutPageWrapper } from '~/components/ui/layouts/PageWrapper'
 import siteInfo from '~/config/siteInfo.json'
-import { LayoutWrapper } from '~/layouts/Wrapper'
 import { FrontmatterProps } from '~/types/frontmatterProps'
 
 type RootProps = {
@@ -54,7 +54,7 @@ const Root = ({ location, frontmatter, children }: RootProps) => {
         />
         <script src={`${frontmatter.rootDir}assets/js/common.js`} defer />
       </Head>
-      <LayoutWrapper>{children}</LayoutWrapper>
+      <LayoutPageWrapper>{children}</LayoutPageWrapper>
     </>
   )
 }

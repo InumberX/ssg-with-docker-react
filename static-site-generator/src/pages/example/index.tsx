@@ -1,5 +1,5 @@
-import { LayoutInner } from '~/components/layout/Inner'
-import { LayoutSection } from '~/components/layout/Section'
+import { LayoutInner } from '~/components/ui/layouts/Inner'
+import { LayoutSection } from '~/components/ui/layouts/Section'
 import { LayoutDefault } from '~/layouts/Base'
 import { FrontmatterProps } from '~/types/frontmatterProps'
 
