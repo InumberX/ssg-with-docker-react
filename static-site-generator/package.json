@@ -1,5 +1,6 @@
 {
   "name": "static-site-generator-with-docker-react",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "minista",
@@ -8,13 +9,17 @@
     "clean": "trash ./dist",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "typecheck": "tsc -b",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ./src/",
-    "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src/",
+    "lint-fix": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src/",
     "lint:quiet": "eslint --quiet --ext .js,.jsx,.ts,.tsx ./src/",
     "stylelint": "stylelint 'src/**/*.{css,scss,sass}'",
-    "stylelint:fix": "stylelint --fix 'src/**/*.{css,scss,sass}'",
+    "stylelint-fix": "stylelint --fix 'src/**/*.{css,scss,sass}'",
     "format": "prettier --check 'src/**/*.{js,jsx,ts,tsx}'",
-    "format:fix": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'"
+    "format-fix": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
+    "upgrade": "npx npm-check-updates -u",
+    "upgrade-check": "npx npm-check-updates",
+    "pre-commit": "npm run typecheck && npm run lint-fix && npm run stylelint-fix && npm run format-fix"
   },
   "browserslist": [
     "last 1 Chrome versions",
@@ -65,5 +70,11 @@
   },
   "resolutions": {
     "jackspeak": "2.1.1"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "volta": {
+    "node": "22.20.0"
   }
 }
