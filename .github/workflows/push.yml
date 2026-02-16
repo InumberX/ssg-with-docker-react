@@ -41,7 +41,7 @@ jobs:
     needs: setup
     defaults:
       run:
-        working-directory: src/app/frontend
+        working-directory: static-site-generator
     steps:
       - uses: actions/checkout@v4
 
@@ -69,7 +69,7 @@ jobs:
     needs: [setup, lint]
     defaults:
       run:
-        working-directory: src/app/frontend
+        working-directory: static-site-generator
     steps:
       - uses: actions/checkout@v4
 
