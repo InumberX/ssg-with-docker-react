@@ -1,11 +1,11 @@
 @layer component-ui-low {
   .LayoutInner {
-    margin-inline: auto;
-    margin-block: 0;
-    max-inline-size: calc(1038px + (40px * 2));
-    padding-inline: 4vw;
-    padding-block: 0;
     inline-size: 100%;
+    margin-block: 0;
+    margin-inline: auto;
+    max-inline-size: calc(1038px + (40px * 2));
+    padding-block: 0;
+    padding-inline: 4vw;
 
     @mixin getMediaQuerySm {
       padding-inline: 4.6vw;
