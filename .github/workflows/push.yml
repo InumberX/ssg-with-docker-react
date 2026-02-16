@@ -13,7 +13,7 @@ jobs:
       npm-cache-dir-path: ${{ steps.npm-cache-dir-path.outputs.dir }}
     defaults:
       run:
-        working-directory: src/app/frontend
+        working-directory: static-site-generator
     steps:
       - uses: actions/checkout@v4
 
