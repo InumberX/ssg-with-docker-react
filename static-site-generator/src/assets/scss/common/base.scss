@@ -85,7 +85,7 @@ li {
   padding: 0;
   vertical-align: baseline;
   -webkit-word-wrap: break-word;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
 
   @include mxGetFontSize(16);
 }
@@ -100,7 +100,7 @@ span {
   -webkit-overflow-wrap: break-word;
   overflow-wrap: break-word;
   -webkit-word-wrap: break-word;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 audio,

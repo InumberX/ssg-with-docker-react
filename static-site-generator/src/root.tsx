@@ -19,14 +19,14 @@ const Root = ({ location, frontmatter, children }: RootProps) => {
   const title = frontmatter?.title
     ? `${frontmatter?.title} | ${siteTitle}`
     : siteTitle
-  const description = frontmatter.description || siteDescription
+  const description = frontmatter?.description || siteDescription
   const ogUrl = `${siteUrl}${location.pathname}`
   const ogImage = siteUrl + '/assets/images/ogp.png'
   const ogType = location.pathname === '/' ? 'website' : 'article'
   const twitterCard = 'summary_large_image'
   const twitterId = site.twitter?.id ? `@${site.twitter.id}` : ''
   const noindex = frontmatter?.noindex || false
-  const favicon = `${frontmatter.rootDir}favicon.png`
+  const favicon = `${frontmatter?.rootDir}favicon.png`
   return (
     <>
       <Head>
@@ -49,10 +49,10 @@ const Root = ({ location, frontmatter, children }: RootProps) => {
         <link rel='icon' href={favicon} />
         <link rel='canonical' href={ogUrl} />
         <script
-          src={`${frontmatter.rootDir}assets/js/lib/jquery.min.js`}
+          src={`${frontmatter?.rootDir}assets/js/lib/jquery.min.js`}
           defer
         />
-        <script src={`${frontmatter.rootDir}assets/js/common.js`} defer />
+        <script src={`${frontmatter?.rootDir}assets/js/common.js`} defer />
       </Head>
       <LayoutWrapper>{children}</LayoutWrapper>
     </>
