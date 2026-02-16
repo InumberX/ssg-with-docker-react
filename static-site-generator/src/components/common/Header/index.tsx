@@ -13,7 +13,7 @@ export const Header = ({ frontmatter }: HeaderProps) => {
         <li className='LayoutHeader__item'>
           <a
             href={routes.top.url({
-              rootDir: frontmatter?.rootDir,
+              rootDir: frontmatter.rootDir,
             })}
             className='LayoutHeader__link'
           >
@@ -23,7 +23,7 @@ export const Header = ({ frontmatter }: HeaderProps) => {
         <li className='LayoutHeader__item'>
           <a
             href={routes.example.url({
-              rootDir: frontmatter?.rootDir,
+              rootDir: frontmatter.rootDir,
             })}
             className='LayoutHeader__link'
           >
