@@ -46,9 +46,15 @@ const config: StorybookConfig = {
     }
 
     // tsconfigの情報をマージし、pathaliasを有効にする
+    // plugins は framework の viteConfigPath 経由で既に読み込まれるため除外する
+    const {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      plugins: _plugins,
+      ...userConfigWithoutPlugins
+    } = userConfig
     return mergeConfig(config, {
-      ...userConfig,
-      plugins: [...(userConfig.plugins ?? []), tsconfigPaths()],
+      ...userConfigWithoutPlugins,
+      plugins: [tsconfigPaths()],
     })
   },
 }
