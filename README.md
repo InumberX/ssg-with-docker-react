@@ -166,7 +166,7 @@ docker compose down
 ### Syntax Check
 
 ```shell
-docker compose exec frontend npm run lint
+docker compose exec node npm run lint
 ```
 
 ### Formatter
@@ -174,13 +174,13 @@ docker compose exec frontend npm run lint
 #### Check
 
 ```shell
-docker compose exec frontend npm run format
+docker compose exec node npm run format
 ```
 
 #### Check and Format
 
 ```shell
-docker compose exec frontend npm run format-fix
+docker compose exec node npm run format-fix
 ```
 
 ### Formatter (PostCSS)
@@ -188,11 +188,11 @@ docker compose exec frontend npm run format-fix
 #### Check
 
 ```shell
-docker compose exec frontend npm run stylelint
+docker compose exec node npm run stylelint
 ```
 
 #### Check and Format
 
 ```shell
-docker compose exec frontend npm run stylelint-fix
+docker compose exec node npm run stylelint-fix
 ```
