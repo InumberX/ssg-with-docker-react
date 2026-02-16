@@ -1,7 +1,7 @@
 .LayoutPageWrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100svh;
-  min-height: 100vh;
+  min-block-size: 100svh;
+  min-block-size: 100vh;
   position: relative;
 }

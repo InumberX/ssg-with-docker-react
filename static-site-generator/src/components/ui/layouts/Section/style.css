@@ -1,13 +1,14 @@
 @layer component-ui-low {
   .LayoutSection {
-    padding: 24px 0;
+    padding-inline: 0;
+    padding-block: 24px;
 
     @mixin getMediaQuerySm {
-      padding: 32px 0;
+      padding-block: 32px;
     }
 
     @mixin getMediaQueryMd {
-      padding: 40px 0;
+      padding-block: 40px;
     }
   }
 }
