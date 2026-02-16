@@ -43,7 +43,7 @@ root.tsx (SEO meta, global scripts)
           └── Page component
 ```
 
-Pages use file-based routing in `src/pages/` and export a `frontmatter` object for metadata (title, description, noindex, draft, etc.).
+Pages use file-based routing in `src/pages/` and export a `frontmatter` object for metadata (title, description, noindex, draft, etc.). The `rootDir` property is **required** — it sets the relative path back to root (`'./'` for root pages, `'../'` for one level deep, etc.) and is used to construct all internal URLs.
 
 ### Key Directories (under `static-site-generator/src/`)
 
@@ -51,10 +51,32 @@ Pages use file-based routing in `src/pages/` and export a `frontmatter` object f
 - `layouts/` — `Base/` (Header/Footer shell) and `Wrapper/` (root div)
 - `components/common/` — Header, Footer
 - `components/layout/` — Section, Inner (structural wrappers)
-- `config/routes.ts` — Route definitions with metadata
+- `config/routes.ts` — Route definitions with metadata; URL functions take `{ rootDir }` param
 - `config/siteInfo.json` — Site-wide metadata (title, URL, Twitter)
 - `types/` — Shared TypeScript type definitions
-- `assets/scss/global/` — Variables, mixins, breakpoints
+- `assets/css/style.css` — Main CSS entry using CSS Layers
+- `assets/post-css/global/` — CSS custom properties (color, font, layout, z-index, breakpoints)
+- `stories/` — Storybook stories mirroring component structure
+
+### CSS Architecture
+
+Uses **PostCSS** (not Sass) with CSS Layers for specificity control:
+
+```
+@layer reset → lib → base → component-ui-low → component-ui-middle →
+       component-ui-high → component-common → component-page → util
+```
+
+Responsive mixins defined in `postcss.config.mjs`:
+- `@mixin getMediaQuerySm` / `Md` / `Lg` / `Xl` / `Xxl` — min-width breakpoints
+- `@mixin getMediaQueryReverse*` — max-width (less than) breakpoints
+- `@mixin getMediaQueryBetween*` — range breakpoints
+- `@mixin getContainerQuery*` — container query variants
+- `@mixin getFontSize(px)` — converts to rem
+- `@mixin getClampPx(property, min, max)` / `getClampRem(...)` — fluid scaling
+- `@mixin getLineClamp(lines)` — text truncation
+
+Breakpoints: xs=360, sm=576, md=768, lg=992, xl=1200, xxl=1400
 
 ### Path Alias
 
@@ -63,8 +85,9 @@ Pages use file-based routing in `src/pages/` and export a `frontmatter` object f
 ## Code Conventions
 
 - **Components**: Functional arrow functions, PascalCase class names
-- **Styling**: SCSS with PascalCase class names (enforced by StyleLint), alphabetical property order
-- **Formatting**: Single quotes, no semicolons, 2-space indent, trailing commas
+- **Styling**: CSS with PostCSS, PascalCase class names (enforced by StyleLint `^[A-Z]+([a-zA-Z0-9\-_]+)*$`), alphabetical property order
+- **Formatting**: Single quotes, no semicolons, 2-space indent, trailing commas (Prettier)
+- **Imports**: Alphabetical order with newlines between groups (eslint-plugin-import-x)
 - **Node**: >= 22.0.0 (managed via Volta at 22.20.0)
 
 ## Git Workflow
