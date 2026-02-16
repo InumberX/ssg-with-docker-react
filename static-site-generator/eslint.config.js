@@ -66,7 +66,7 @@ export default tseslint.config(
     },
   },
   {
-    files: ['postcss.config.js', '.storybook/**/*.{ts,tsx,js}'],
+    files: ['postcss.config.mjs', '.storybook/**/*.{ts,tsx,js}'],
     languageOptions: {
       parserOptions: {
         project: null,
