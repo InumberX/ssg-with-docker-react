@@ -30,7 +30,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ steps.npm-cache-dir-path.outputs.dir }}
-          key: ${{ env.cache-version }}-${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+          key: ${{ env.cache-version }}-${{ runner.os }}-npm-${{ hashFiles('static-site-generator/package-lock.json') }}
           restore-keys: |
             ${{ env.cache-version }}-${{ runner.os }}-npm-
 
@@ -54,7 +54,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ needs.setup.outputs.npm-cache-dir-path }}
-          key: ${{ env.cache-version }}-${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+          key: ${{ env.cache-version }}-${{ runner.os }}-npm-${{ hashFiles('static-site-generator/package-lock.json') }}
           restore-keys: |
             ${{ env.cache-version }}-${{ runner.os }}-npm-
 
@@ -82,7 +82,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ needs.setup.outputs.npm-cache-dir-path }}
-          key: ${{ env.cache-version }}-${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+          key: ${{ env.cache-version }}-${{ runner.os }}-npm-${{ hashFiles('static-site-generator/package-lock.json') }}
           restore-keys: |
             ${{ env.cache-version }}-${{ runner.os }}-npm-
 
