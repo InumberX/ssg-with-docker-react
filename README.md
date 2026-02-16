@@ -61,13 +61,13 @@ yarn lint
 #### Check
 
 ```shell
-yarn prettier
+yarn format
 ```
 
 #### Check and Format
 
 ```shell
-yarn prettier:fix
+yarn format:fix
 ```
 
 ### Formatter (SCSS)
@@ -159,13 +159,13 @@ docker compose exec frontend yarn lint
 #### Check
 
 ```shell
-docker compose exec frontend yarn prettier
+docker compose exec frontend yarn format
 ```
 
 #### Check and Format
 
 ```shell
-docker compose exec frontend yarn prettier:fix
+docker compose exec frontend yarn format:fix
 ```
 
 ### Formatter (SCSS)

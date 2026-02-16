@@ -13,8 +13,8 @@
     "lint:quiet": "eslint --quiet --ext .js,.jsx,.ts,.tsx ./src/",
     "stylelint": "stylelint 'src/**/*.{css,scss,sass}'",
     "stylelint:fix": "stylelint --fix 'src/**/*.{css,scss,sass}'",
-    "prettier": "prettier --check 'src/**/*.{js,jsx,ts,tsx}'",
-    "prettier:fix": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'"
+    "format": "prettier --check 'src/**/*.{js,jsx,ts,tsx}'",
+    "format:fix": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'"
   },
   "browserslist": [
     "last 1 Chrome versions",
