@@ -1,7 +1,10 @@
 import path from 'path'
+
 import { StorybookConfig } from '@storybook/react-vite'
-const { loadConfigFromFile, mergeConfig } = require('vite')
-const tsconfigPaths = require('vite-tsconfig-paths').default
+import { loadConfigFromFile, mergeConfig } from 'vite'
+import tsconfigPaths from 'vite-tsconfig-paths'
+
+const __dirname = path.dirname(new URL(import.meta.url).pathname)
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -14,32 +17,38 @@ const config: StorybookConfig = {
     name: '@storybook/react-vite',
     options: {
       strictMode: true,
+      builder: {
+        viteConfigPath: 'vite-storybook.config.ts',
+      },
     },
   },
   staticDirs: ['../public'],
   viteFinal: async (config, { configType }) => {
     // Add your configuration here
-    const { config: userConfig } = await loadConfigFromFile(
-      configType,
-      path.resolve(__dirname, '../vite.config.ts'),
+    const configPath = path.resolve(__dirname, '../vite-storybook.config.ts')
+    const result = await loadConfigFromFile(
+      { mode: configType ?? 'development', command: 'build' },
+      configPath,
     )
+    const userConfig = result?.config ?? {}
+
+    config.define = {
+      'process.env': {},
+    }
+
+    if (config.resolve) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '~': path.resolve(__dirname, '../src'),
+        '~/assets/scss': path.resolve(__dirname, '../src/assets/scss'),
+        '~/style': path.resolve(__dirname, '../src/style'),
+      }
+    }
 
     // tsconfigの情報をマージし、pathaliasを有効にする
     return mergeConfig(config, {
       ...userConfig,
       plugins: [tsconfigPaths()],
-      resolve: {
-        alias: [
-          {
-            find: /^~\/assets\/scss\/(.*)$/,
-            replacement: path.resolve(__dirname, '../src/assets/scss/$1'),
-          },
-          {
-            find: /^~\/(.*)\/style$/,
-            replacement: path.resolve(__dirname, '../src/$1/style'),
-          },
-        ],
-      },
     })
   },
 }
