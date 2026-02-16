@@ -1,1 +1,5 @@
-/* stylelint-disable no-empty-source */
+.LayoutFooter {
+  margin-block-start: auto;
+  position: relative;
+  z-index: var(--z-index-footer);
+}
