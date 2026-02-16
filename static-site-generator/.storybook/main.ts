@@ -7,7 +7,7 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 const __dirname = path.dirname(new URL(import.meta.url).pathname)
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
