@@ -1,4 +1,5 @@
 import path from 'path'
+
 import { defineConfig } from 'minista'
 
 export default defineConfig({
@@ -21,7 +22,7 @@ export default defineConfig({
     entry: [
       {
         name: 'css/style',
-        input: 'src/assets/css/style.scss',
+        input: 'src/assets/css/style.css',
         insertPages: [],
       },
     ],

@@ -1,10 +1,11 @@
 import { ReactNode } from 'react'
-import { Header } from '~/components/common/Header'
+
 import { Footer } from '~/components/common/Footer'
+import { Header } from '~/components/common/Header'
 import { FrontmatterProps } from '~/types/frontmatterProps'
 
 type LayoutDefaultProps = {
-  frontmatter?: FrontmatterProps
+  frontmatter: FrontmatterProps
   children: ReactNode
   isLogoTitle?: boolean
 }

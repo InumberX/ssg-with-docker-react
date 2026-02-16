@@ -1,12 +1,13 @@
 import type { Location } from 'minista'
 import { Head } from 'minista'
+
+import { LayoutPageWrapper } from '~/components/ui/layouts/PageWrapper'
 import siteInfo from '~/config/siteInfo.json'
-import { LayoutWrapper } from '~/layouts/Wrapper'
 import { FrontmatterProps } from '~/types/frontmatterProps'
 
 type RootProps = {
   location: Location
-  frontmatter?: FrontmatterProps
+  frontmatter: FrontmatterProps
   children: React.ReactNode
 }
 
@@ -15,8 +16,8 @@ const Root = ({ location, frontmatter, children }: RootProps) => {
   const siteTitle = site.title
   const siteDescription = site.description
   const siteUrl = site.url
-  const title = frontmatter?.title
-    ? `${frontmatter?.title} | ${siteTitle}`
+  const title = frontmatter.title
+    ? `${frontmatter.title} | ${siteTitle}`
     : siteTitle
   const description = frontmatter.description || siteDescription
   const ogUrl = `${siteUrl}${location.pathname}`
@@ -24,7 +25,7 @@ const Root = ({ location, frontmatter, children }: RootProps) => {
   const ogType = location.pathname === '/' ? 'website' : 'article'
   const twitterCard = 'summary_large_image'
   const twitterId = site.twitter?.id ? `@${site.twitter.id}` : ''
-  const noindex = frontmatter?.noindex || false
+  const noindex = frontmatter.noindex || false
   const favicon = `${frontmatter.rootDir}favicon.png`
   return (
     <>
@@ -53,7 +54,7 @@ const Root = ({ location, frontmatter, children }: RootProps) => {
         />
         <script src={`${frontmatter.rootDir}assets/js/common.js`} defer />
       </Head>
-      <LayoutWrapper>{children}</LayoutWrapper>
+      <LayoutPageWrapper>{children}</LayoutPageWrapper>
     </>
   )
 }

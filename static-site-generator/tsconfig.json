@@ -2,8 +2,14 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
+    "allowJs": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "noErrorTruncation": true,
@@ -14,5 +20,12 @@
       "~/*": ["./src/*"]
     }
   },
-  "include": ["./minista.config.ts", "src"]
+  "include": [
+    "./minista.config.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "eslint.config.js",
+    "postcss.config.mjs"
+  ],
+  "exclude": ["node_modules", "dist"]
 }

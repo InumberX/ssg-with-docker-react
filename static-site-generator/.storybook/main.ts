@@ -1,10 +1,13 @@
 import path from 'path'
+
 import { StorybookConfig } from '@storybook/react-vite'
-const { loadConfigFromFile, mergeConfig } = require('vite')
-const tsconfigPaths = require('vite-tsconfig-paths').default
+import { loadConfigFromFile, mergeConfig } from 'vite'
+import tsconfigPaths from 'vite-tsconfig-paths'
+
+const __dirname = path.dirname(new URL(import.meta.url).pathname)
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -14,32 +17,44 @@ const config: StorybookConfig = {
     name: '@storybook/react-vite',
     options: {
       strictMode: true,
+      builder: {
+        viteConfigPath: 'vite-storybook.config.ts',
+      },
     },
   },
   staticDirs: ['../public'],
   viteFinal: async (config, { configType }) => {
     // Add your configuration here
-    const { config: userConfig } = await loadConfigFromFile(
-      configType,
-      path.resolve(__dirname, '../vite.config.ts'),
+    const configPath = path.resolve(__dirname, '../vite-storybook.config.ts')
+    const viteMode = configType === 'PRODUCTION' ? 'production' : 'development'
+    const result = await loadConfigFromFile(
+      { mode: viteMode, command: 'build' },
+      configPath,
     )
+    const userConfig = result?.config ?? {}
+
+    config.define = {
+      'process.env': {},
+    }
+
+    if (config.resolve) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '~': path.resolve(__dirname, '../src'),
+        '../../components': path.resolve(__dirname, '../src/components'),
+      }
+    }
 
     // tsconfigの情報をマージし、pathaliasを有効にする
+    // plugins は framework の viteConfigPath 経由で既に読み込まれるため除外する
+    const {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      plugins: _plugins,
+      ...userConfigWithoutPlugins
+    } = userConfig
     return mergeConfig(config, {
-      ...userConfig,
+      ...userConfigWithoutPlugins,
       plugins: [tsconfigPaths()],
-      resolve: {
-        alias: [
-          {
-            find: /^~\/assets\/scss\/(.*)$/,
-            replacement: path.resolve(__dirname, '../src/assets/scss/$1'),
-          },
-          {
-            find: /^~\/(.*)\/style$/,
-            replacement: path.resolve(__dirname, '../src/$1/style'),
-          },
-        ],
-      },
     })
   },
 }
