@@ -1,5 +1,6 @@
 import type { Location } from 'minista'
 import { Head } from 'minista'
+
 import siteInfo from '~/config/siteInfo.json'
 import { LayoutWrapper } from '~/layouts/Wrapper'
 import { FrontmatterProps } from '~/types/frontmatterProps'

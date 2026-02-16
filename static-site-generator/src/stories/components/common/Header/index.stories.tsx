@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { FrontmatterProps } from '~/types/frontmatterProps'
+
 import { Header } from '~/components/common/Header'
+import { FrontmatterProps } from '~/types/frontmatterProps'
 
 const frontmatter: FrontmatterProps = {
   rootDir: '/',

@@ -1,7 +1,7 @@
+import { LayoutInner } from '~/components/layout/Inner'
+import { LayoutSection } from '~/components/layout/Section'
 import { LayoutDefault } from '~/layouts/Base'
 import { FrontmatterProps } from '~/types/frontmatterProps'
-import { LayoutSection } from '~/components/layout/Section'
-import { LayoutInner } from '~/components/layout/Inner'
 
 export const frontmatter: FrontmatterProps = {
   rootDir: '../',

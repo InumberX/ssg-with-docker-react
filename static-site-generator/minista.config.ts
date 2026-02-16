@@ -1,4 +1,5 @@
 import path from 'path'
+
 import { defineConfig } from 'minista'
 
 export default defineConfig({

@@ -20,5 +20,6 @@
       "~/*": ["./src/*"]
     }
   },
-  "include": ["./minista.config.ts", "src"]
+  "include": ["./minista.config.ts", "**/*.ts", "**/*.tsx", "eslint.config.js"],
+  "exclude": ["node_modules", "dist"]
 }

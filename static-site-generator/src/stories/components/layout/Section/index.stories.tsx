@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import { LayoutSection } from '~/components/layout/Section'
 
 export default {
