@@ -17,7 +17,7 @@ export default tseslint.config(
           jsx: true,
         },
         project: ['./tsconfig.json'],
-        tsconfigRootDir: import.meta.dir,
+        tsconfigRootDir: import.meta.dirname,
       },
       sourceType: 'module',
       globals: {
