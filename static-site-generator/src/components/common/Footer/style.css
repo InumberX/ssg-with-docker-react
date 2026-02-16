@@ -1,5 +1,7 @@
-.LayoutFooter {
-  margin-block-start: auto;
-  position: relative;
-  z-index: var(--z-index-footer);
+@layer component-common {
+  .LayoutFooter {
+    margin-block-start: auto;
+    position: relative;
+    z-index: var(--z-index-footer);
+  }
 }
