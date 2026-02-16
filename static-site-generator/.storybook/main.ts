@@ -48,7 +48,7 @@ const config: StorybookConfig = {
     // tsconfigの情報をマージし、pathaliasを有効にする
     return mergeConfig(config, {
       ...userConfig,
-      plugins: [tsconfigPaths()],
+      plugins: [...(userConfig.plugins ?? []), tsconfigPaths()],
     })
   },
 }
