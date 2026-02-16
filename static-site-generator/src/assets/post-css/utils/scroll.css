@@ -3,7 +3,7 @@
     scroll-margin-top: calc(var(--layout-header-height) + 24px);
 
     @mixin getMediaQuerySm {
-      scroll-margin-top: calc(var(--layout-header-height-large) + 24px);
+      scroll-margin-top: calc(var(--layout-header-height-sm) + 24px);
     }
   }
 }
