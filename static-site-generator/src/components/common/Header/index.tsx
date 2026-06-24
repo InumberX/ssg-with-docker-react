@@ -1,5 +1,5 @@
 import { routes } from '~/config/routes'
-import { Metadata } from '~/types/metadata'
+import { type Metadata } from '~/types/metadata'
 
 type HeaderProps = {
   metadata: Metadata

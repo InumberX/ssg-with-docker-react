@@ -1,5 +1,5 @@
 import { LayoutDefault } from '~/layouts/Base'
-import { Metadata } from '~/types/metadata'
+import { type Metadata } from '~/types/metadata'
 
 export const metadata: Metadata = {
   rootDir: './',

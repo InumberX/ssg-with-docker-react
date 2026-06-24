@@ -1,7 +1,7 @@
 import { LayoutInner } from '~/components/ui/layouts/Inner'
 import { LayoutSection } from '~/components/ui/layouts/Section'
 import { LayoutDefault } from '~/layouts/Base'
-import { Metadata } from '~/types/metadata'
+import { type Metadata } from '~/types/metadata'
 
 export const metadata: Metadata = {
   rootDir: '../',

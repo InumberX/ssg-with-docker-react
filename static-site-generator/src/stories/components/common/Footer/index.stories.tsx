@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Footer } from '~/components/common/Footer'
-import { Metadata } from '~/types/metadata'
+import { type Metadata } from '~/types/metadata'
 
 const metadata: Metadata = {
   rootDir: '/',

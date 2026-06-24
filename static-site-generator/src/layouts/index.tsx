@@ -1,9 +1,9 @@
 import { Head } from 'minista/head'
-import { ReactNode } from 'react'
+import { type ReactNode } from 'react'
 
 import { LayoutPageWrapper } from '~/components/ui/layouts/PageWrapper'
 import siteInfo from '~/config/siteInfo.json'
-import { Metadata } from '~/types/metadata'
+import { type Metadata } from '~/types/metadata'
 
 type LayoutProps = Metadata & {
   url?: string

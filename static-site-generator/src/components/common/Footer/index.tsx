@@ -1,4 +1,4 @@
-import { Metadata } from '~/types/metadata'
+import { type Metadata } from '~/types/metadata'
 
 type FooterProps = {
   metadata: Metadata

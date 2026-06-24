@@ -1,8 +1,8 @@
-import { ReactNode } from 'react'
+import { type ReactNode } from 'react'
 
 import { Footer } from '~/components/common/Footer'
 import { Header } from '~/components/common/Header'
-import { Metadata } from '~/types/metadata'
+import { type Metadata } from '~/types/metadata'
 
 type LayoutDefaultProps = {
   metadata: Metadata
