@@ -80,6 +80,7 @@
       "files": [
         "postcss.config.mjs",
         "vite-storybook.config.ts",
+        "vitest.config.ts",
         "minista.config.ts",
         ".storybook/**/*.{ts,tsx,js}"
       ],

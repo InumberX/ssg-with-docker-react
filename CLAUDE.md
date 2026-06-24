@@ -15,6 +15,10 @@ All commands run from `static-site-generator/`:
 npm run dev              # Dev server at http://localhost:3000
 npm run storybook        # Storybook at http://localhost:6006
 
+# Test
+npm run test             # Vitest in watch mode
+npm run test-run         # Vitest single run (used in CI)
+
 # Build
 npm run build            # Generate static site to dist/
 npm run preview          # Preview production build
@@ -93,6 +97,10 @@ Breakpoints: xs=360, sm=576, md=768, lg=992, xl=1200, xxl=1400
 
 Storybook uses a separate Vite config (`vite-storybook.config.ts`) with `@storybook/react-vite`. Stories live in `src/stories/` mirroring the component directory structure, and use path aliases (`~/`) for imports.
 
+### Testing
+
+Vitest with `jsdom` and `@testing-library/react`. Config in `vitest.config.ts` (React plugin, `globals: true`, `~/` resolved via `resolve.tsconfigPaths`); `vitest-env.ts` registers `@testing-library/jest-dom` matchers. Tests live in `src/tests/` mirroring the component directory structure as `index.test.tsx`, and import test helpers (`describe`/`test`/`expect`/`vi`) explicitly from `vitest`.
+
 ## Code Conventions
 
 - **Components**: Functional arrow functions, PascalCase class names
@@ -104,7 +112,7 @@ Storybook uses a separate Vite config (`vite-storybook.config.ts`) with `@storyb
 
 ## CI
 
-Push to any branch triggers GitHub Actions (`push.yml`): format check → stylelint → lint → typecheck → build.
+Push to any branch triggers GitHub Actions (`push.yml`): a `lint` job (format check → stylelint → lint → typecheck) and a `test` job (`test-run`) run in parallel, then `build`.
 
 ## Git Workflow
 
