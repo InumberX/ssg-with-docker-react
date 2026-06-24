@@ -1,12 +1,12 @@
-import { FrontmatterProps } from '~/types/frontmatterProps'
+import { Metadata } from '~/types/metadata'
 
 type FooterProps = {
-  frontmatter: FrontmatterProps
+  metadata: Metadata
 }
 
 export const Footer = ({
   // oxlint-disable-next-line no-unused-vars
-  frontmatter,
+  metadata,
 }: FooterProps) => {
   return <footer className='LayoutFooter'>フッター</footer>
 }

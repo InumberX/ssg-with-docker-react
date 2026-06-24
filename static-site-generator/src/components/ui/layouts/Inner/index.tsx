@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 
 type LayoutInnerProps = {
-  children: ReactNode
+  children?: ReactNode
   className?: string
   size?: 'medium' | 'large'
 }

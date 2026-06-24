@@ -7,9 +7,9 @@
 @import '../post-css/global/z-index.css';
 @import '../post-css/global/scale.css';
 @import '../post-css/libs/ress.min.css';
-@import '../post-css/base';
-@import '../post-css/utils';
-@import '../post-css/no-layer';
+@import '../post-css/base/index.css';
+@import '../post-css/utils/index.css';
+@import '../post-css/no-layer/index.css';
 @import '../../components/common/Footer/style.css';
 @import '../../components/common/Header/style.css';
 @import '../../components/ui/layouts/Inner/style.css';

@@ -10,7 +10,7 @@
     "browser": true,
     "commonjs": true
   },
-  "ignorePatterns": ["node_modules", "dist", "storybook-build", "public"],
+  "ignorePatterns": ["node_modules", "dist", "storybook-static", "public"],
   "rules": {
     "no-array-constructor": "error",
     "no-shadow": "allow",
@@ -71,7 +71,6 @@
     {
       "files": [
         "postcss.config.mjs",
-        "vite.config.ts",
         "vite-storybook.config.ts",
         "minista.config.ts",
         ".storybook/**/*.{ts,tsx,js}"

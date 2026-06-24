@@ -1,12 +1,12 @@
 import { LayoutDefault } from '~/layouts/Base'
-import { FrontmatterProps } from '~/types/frontmatterProps'
+import { Metadata } from '~/types/metadata'
 
-export const frontmatter: FrontmatterProps = {
+export const metadata: Metadata = {
   rootDir: './',
 }
 
 const Page = () => {
-  return <LayoutDefault frontmatter={frontmatter}>トップページ</LayoutDefault>
+  return <LayoutDefault metadata={metadata}>トップページ</LayoutDefault>
 }
 
 export default Page

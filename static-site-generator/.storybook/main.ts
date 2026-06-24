@@ -1,7 +1,6 @@
 import { StorybookConfig } from '@storybook/react-vite'
 import path from 'path'
 import { loadConfigFromFile, mergeConfig } from 'vite'
-import tsconfigPaths from 'vite-tsconfig-paths'
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname)
 
@@ -44,17 +43,14 @@ const config: StorybookConfig = {
       }
     }
 
-    // tsconfigの情報をマージし、pathaliasを有効にする
+    // tsconfigの情報（resolve.tsconfigPathsによるpath alias含む）をマージする
     // plugins は framework の viteConfigPath 経由で既に読み込まれるため除外する
     const {
       // oxlint-disable-next-line no-unused-vars
       plugins: _plugins,
       ...userConfigWithoutPlugins
     } = userConfig
-    return mergeConfig(config, {
-      ...userConfigWithoutPlugins,
-      plugins: [tsconfigPaths()],
-    })
+    return mergeConfig(config, userConfigWithoutPlugins)
   },
 }
 

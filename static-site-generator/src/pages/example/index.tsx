@@ -1,16 +1,16 @@
 import { LayoutInner } from '~/components/ui/layouts/Inner'
 import { LayoutSection } from '~/components/ui/layouts/Section'
 import { LayoutDefault } from '~/layouts/Base'
-import { FrontmatterProps } from '~/types/frontmatterProps'
+import { Metadata } from '~/types/metadata'
 
-export const frontmatter: FrontmatterProps = {
+export const metadata: Metadata = {
   rootDir: '../',
   title: 'サンプル',
 }
 
 const Page = () => {
   return (
-    <LayoutDefault frontmatter={frontmatter}>
+    <LayoutDefault metadata={metadata}>
       <LayoutSection isNotSection>
         <LayoutInner>
           <h1>下層ページ</h1>

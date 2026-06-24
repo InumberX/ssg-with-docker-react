@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static site generator built with React, TypeScript, and [Minista](https://minista.qranoko.jp/). Minista generates static HTML from React components — this is **not** a SPA. The main application lives in `static-site-generator/`.
+Static site generator built with React 19, TypeScript, and [Minista v4](https://minista.qranoko.jp/). Minista v4 runs as a wrapper around Vite — the config is a standard Vite config and SSG/asset features are provided as Vite plugins. It generates static HTML from React components — this is **not** a SPA. The main application lives in `static-site-generator/`.
 
 ## Commands
 
@@ -22,9 +22,9 @@ npm run clean            # Remove dist/
 
 # Quality (run all at once with: npm run pre-commit)
 npm run typecheck        # tsc -b
-npm run lint-fix         # ESLint with auto-fix
+npm run lint-fix         # oxlint with auto-fix
 npm run stylelint-fix    # StyleLint with auto-fix
-npm run format-fix       # Prettier with auto-fix
+npm run format-fix       # oxfmt with auto-fix
 
 # Docker alternative
 docker compose up -d
@@ -36,18 +36,22 @@ docker compose exec node npm run dev
 
 ### Page Rendering Pipeline
 
+Minista v4 generates the `<html>`/`<head>`/`<body>` shell itself and wraps every page in the global layout (`src/layouts/index.tsx`). `<head>` content is injected via `<Head>` from `minista/head`.
+
 ```
-root.tsx (SEO meta, global scripts)
+src/layouts/index.tsx (global layout: SEO meta via <Head>, global scripts, <html lang>)
   └── LayoutPageWrapper (components/ui/layouts/PageWrapper)
-      └── LayoutDefault (layouts/Base: Header + Main + Footer)
-          └── Page component
+      └── Page component (src/pages/*)
+          └── LayoutDefault (layouts/Base: Header + Main + Footer)
+              └── page content
 ```
 
-Pages use file-based routing in `src/pages/` and export a `frontmatter` object for metadata (title, description, noindex, draft, etc.). The `frontmatter` prop is **required** throughout the component tree. The `rootDir` property sets the relative path back to root (`'./'` for root pages, `'../'` for one level deep, etc.) and is used to construct all internal URLs.
+Pages use file-based routing in `src/pages/` and export a `metadata` object (the v4 name minista reads) for page metadata (title, description, noindex, draft, rootDir, etc.). Minista spreads each page's `metadata` (plus `url`) into the props of both the global layout and the page component. Within the component tree this object is still passed around as the `frontmatter` prop (type `FrontmatterProps`), which Header/Footer/LayoutDefault require. The `rootDir` property sets the relative path back to root (`'./'` for root pages, `'../'` for one level deep, etc.) and is used to construct all internal URLs; the global layout reads minista's `url` prop for canonical/OG URLs.
 
 ### Key Directories (under `static-site-generator/src/`)
 
-- `pages/` — File-based routes; each page exports `frontmatter` + default component
+- `pages/` — File-based routes; each page exports `metadata` + default component
+- `layouts/index.tsx` — Global layout minista wraps every page in (SEO `<Head>`, global scripts, CSS entry)
 - `layouts/Base/` — LayoutDefault (Header/Footer shell)
 - `components/common/` — Header, Footer
 - `components/ui/layouts/` — PageWrapper, Section, Inner (structural wrappers)
@@ -83,7 +87,7 @@ Breakpoints: xs=360, sm=576, md=768, lg=992, xl=1200, xxl=1400
 
 ### Path Alias
 
-`~/` resolves to `src/` (configured in tsconfig.json and minista.config.ts).
+`~/` resolves to `src/` (defined in tsconfig.json `paths` and applied via Vite's native `resolve.tsconfigPaths: true` in minista.config.ts and vite-storybook.config.ts).
 
 ### Storybook
 
@@ -93,14 +97,14 @@ Storybook uses a separate Vite config (`vite-storybook.config.ts`) with `@storyb
 
 - **Components**: Functional arrow functions, PascalCase class names
 - **Styling**: CSS with PostCSS, logical properties, PascalCase class names (enforced by StyleLint `^[A-Z]+([a-zA-Z0-9\-_]+)*$`), alphabetical property order
-- **Formatting**: Single quotes, no semicolons, 2-space indent, trailing commas (Prettier)
-- **Imports**: Alphabetical order with newlines between groups (eslint-plugin-import-x)
-- **ESLint**: Flat config format (`eslint.config.js`), TypeScript-aware with `typescript-eslint`
+- **Formatting**: Single quotes, no semicolons, 2-space indent, trailing commas (oxfmt, configured in `.oxfmtrc.json`)
+- **Imports**: Grouped with newlines between groups, sorted (oxfmt `sortImports`)
+- **Lint**: oxlint (`.oxlintrc.json`), TypeScript- and React-aware (`typescript`/`react` plugins)
 - **Node**: >= 22.0.0 (managed via Volta at 22.20.0)
 
 ## CI
 
-Push to any branch triggers GitHub Actions (`push.yml`): format check → stylelint → eslint → typecheck → build.
+Push to any branch triggers GitHub Actions (`push.yml`): format check → stylelint → lint → typecheck → build.
 
 ## Git Workflow
 
