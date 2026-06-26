@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { Header } from '~/components/common/Header'
-import { FrontmatterProps } from '~/types/frontmatterProps'
+import { type Metadata } from '~/types/metadata'
 
-const frontmatter: FrontmatterProps = {
+const metadata: Metadata = {
   rootDir: '/',
 }
 
@@ -16,6 +16,6 @@ type Story = StoryObj<typeof Header>
 
 export const Default: Story = {
   args: {
-    frontmatter,
+    metadata,
   },
 }

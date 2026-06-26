@@ -1,62 +1,66 @@
-import type { Location } from 'minista'
-import { Head } from 'minista'
+import { Head } from 'minista/head'
+import { type ReactNode } from 'react'
 
 import { LayoutPageWrapper } from '~/components/ui/layouts/PageWrapper'
 import siteInfo from '~/config/siteInfo.json'
-import { FrontmatterProps } from '~/types/frontmatterProps'
+import { type Metadata } from '~/types/metadata'
 
-type RootProps = {
-  location: Location
-  frontmatter: FrontmatterProps
-  children: React.ReactNode
+type LayoutProps = Metadata & {
+  url?: string
+  children?: ReactNode
 }
 
-const Root = ({ location, frontmatter, children }: RootProps) => {
+const Layout = ({
+  url,
+  title,
+  description,
+  noindex,
+  rootDir,
+  lang,
+  children,
+}: LayoutProps) => {
   const site = siteInfo.site
   const siteTitle = site.title
   const siteDescription = site.description
   const siteUrl = site.url
-  const title = frontmatter.title
-    ? `${frontmatter.title} | ${siteTitle}`
-    : siteTitle
-  const description = frontmatter.description || siteDescription
-  const ogUrl = `${siteUrl}${location.pathname}`
+  const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle
+  const pageDescription = description || siteDescription
+  const currentUrl = url ?? '/'
+  const ogUrl = `${siteUrl}${currentUrl}`
   const ogImage = siteUrl + '/assets/images/ogp.png'
-  const ogType = location.pathname === '/' ? 'website' : 'article'
+  const ogType = currentUrl === '/' ? 'website' : 'article'
   const twitterCard = 'summary_large_image'
   const twitterId = site.twitter?.id ? `@${site.twitter.id}` : ''
-  const noindex = frontmatter.noindex || false
-  const favicon = `${frontmatter.rootDir}favicon.png`
+  const isNoindex = noindex || false
+  const favicon = `${rootDir}favicon.png`
   return (
     <>
-      <Head>
+      <Head htmlAttributes={{ lang: lang || 'ja' }}>
         <meta name='format-detection' content='telephone=no' />
         <meta
           name='viewport'
           content='width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=no,shrink-to-fit=no,viewport-fit=cover'
         />
-        <title>{title}</title>
-        <meta name='description' content={description} />
-        <meta property='og:title' content={title} />
-        <meta property='og:description' content={description} />
+        <title>{pageTitle}</title>
+        <meta name='description' content={pageDescription} />
+        <meta property='og:title' content={pageTitle} />
+        <meta property='og:description' content={pageDescription} />
         <meta property='og:url' content={ogUrl} />
         <meta property='og:image' content={ogImage} />
         <meta property='og:site_name' content={siteTitle} />
         <meta property='og:type' content={ogType} />
         <meta name='twitter:card' content={twitterCard} />
         {twitterId && <meta name='twitter:creator' content={twitterId} />}
-        {noindex && <meta name='robots' content='noindex' />}
+        {isNoindex && <meta name='robots' content='noindex' />}
         <link rel='icon' href={favicon} />
         <link rel='canonical' href={ogUrl} />
-        <script
-          src={`${frontmatter.rootDir}assets/js/lib/jquery.min.js`}
-          defer
-        />
-        <script src={`${frontmatter.rootDir}assets/js/common.js`} defer />
+        <link rel='stylesheet' href='/src/assets/css/style.css' />
+        <script src={`${rootDir}assets/js/lib/jquery.min.js`} defer />
+        <script src={`${rootDir}assets/js/common.js`} defer />
       </Head>
       <LayoutPageWrapper>{children}</LayoutPageWrapper>
     </>
   )
 }
 
-export default Root
+export default Layout

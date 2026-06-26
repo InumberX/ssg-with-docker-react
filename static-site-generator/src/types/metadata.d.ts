@@ -1,11 +1,11 @@
-import LangType from '~/types/langType'
+import { type Lang } from '~/types/lang'
 
-export type FrontmatterProps = {
+export type Metadata = {
   rootDir: string
   title?: string
   description?: string
   layout?: string
   noindex?: boolean
   draft?: boolean
-  langType?: LangType
+  lang?: Lang
 }

@@ -1,12 +1,9 @@
-import { FrontmatterProps } from '~/types/frontmatterProps'
+import { type Metadata } from '~/types/metadata'
 
 type FooterProps = {
-  frontmatter: FrontmatterProps
+  metadata: Metadata
 }
 
-export const Footer = ({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  frontmatter,
-}: FooterProps) => {
+export const Footer = (_: FooterProps) => {
   return <footer className='LayoutFooter'>フッター</footer>
 }

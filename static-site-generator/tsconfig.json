@@ -14,8 +14,6 @@
     "skipLibCheck": true,
     "noErrorTruncation": true,
     "jsx": "react-jsx",
-    "types": ["minista/client"],
-    "typeRoots": ["node_modules", "src/types"],
     "paths": {
       "~/*": ["./src/*"]
     }
@@ -24,7 +22,7 @@
     "./minista.config.ts",
     "**/*.ts",
     "**/*.tsx",
-    "eslint.config.js",
+    "**/*.d.ts",
     "postcss.config.mjs"
   ],
   "exclude": ["node_modules", "dist"]

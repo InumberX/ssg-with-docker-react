@@ -1,7 +1,7 @@
-import { ReactNode } from 'react'
+import { type ReactNode } from 'react'
 
 type LayoutSectionProps = {
-  children: ReactNode
+  children?: ReactNode
   isNotSection?: boolean
   className?: string
   size?: 'large'

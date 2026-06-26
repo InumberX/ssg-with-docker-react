@@ -1,25 +1,25 @@
-import { ReactNode } from 'react'
+import { type ReactNode } from 'react'
 
 import { Footer } from '~/components/common/Footer'
 import { Header } from '~/components/common/Header'
-import { FrontmatterProps } from '~/types/frontmatterProps'
+import { type Metadata } from '~/types/metadata'
 
 type LayoutDefaultProps = {
-  frontmatter: FrontmatterProps
-  children: ReactNode
+  metadata: Metadata
+  children?: ReactNode
   isLogoTitle?: boolean
 }
 
 export const LayoutDefault = ({
-  frontmatter,
+  metadata,
   children,
   isLogoTitle,
 }: LayoutDefaultProps) => {
   return (
     <>
-      <Header frontmatter={frontmatter} isLogoTitle={isLogoTitle} />
+      <Header metadata={metadata} isLogoTitle={isLogoTitle} />
       <main className='LayoutMain'>{children}</main>
-      <Footer frontmatter={frontmatter} />
+      <Footer metadata={metadata} />
     </>
   )
 }

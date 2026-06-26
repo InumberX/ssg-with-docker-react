@@ -1,19 +1,19 @@
 import { routes } from '~/config/routes'
-import { FrontmatterProps } from '~/types/frontmatterProps'
+import { type Metadata } from '~/types/metadata'
 
 type HeaderProps = {
-  frontmatter: FrontmatterProps
+  metadata: Metadata
   isLogoTitle?: boolean
 }
 
-export const Header = ({ frontmatter }: HeaderProps) => {
+export const Header = ({ metadata }: HeaderProps) => {
   return (
     <header className='LayoutHeader'>
       <ul className='LayoutHeader__items'>
         <li className='LayoutHeader__item'>
           <a
             href={routes.top.url({
-              rootDir: frontmatter.rootDir,
+              rootDir: metadata.rootDir,
             })}
             className='LayoutHeader__link'
           >
@@ -23,7 +23,7 @@ export const Header = ({ frontmatter }: HeaderProps) => {
         <li className='LayoutHeader__item'>
           <a
             href={routes.example.url({
-              rootDir: frontmatter.rootDir,
+              rootDir: metadata.rootDir,
             })}
             className='LayoutHeader__link'
           >
