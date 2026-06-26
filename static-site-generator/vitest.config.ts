@@ -7,7 +7,6 @@ export default defineConfig({
     globals: true,
     setupFiles: ['./vitest-env.ts'],
     includeSource: ['src/**/*.{ts,tsx}'],
-    exclude: ['node_modules'],
   },
   resolve: {
     // tsconfig.jsonのpaths（~/）をVite標準機能で解決する

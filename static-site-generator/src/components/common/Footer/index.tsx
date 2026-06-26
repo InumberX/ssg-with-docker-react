@@ -4,9 +4,6 @@ type FooterProps = {
   metadata: Metadata
 }
 
-export const Footer = ({
-  // oxlint-disable-next-line no-unused-vars
-  metadata,
-}: FooterProps) => {
+export const Footer = (_: FooterProps) => {
   return <footer className='LayoutFooter'>フッター</footer>
 }
