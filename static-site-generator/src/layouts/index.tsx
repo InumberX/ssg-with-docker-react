@@ -25,9 +25,10 @@ const Layout = ({
   const siteUrl = site.url
   const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle
   const pageDescription = description || siteDescription
-  const ogUrl = `${siteUrl}${url}`
+  const currentUrl = url ?? '/'
+  const ogUrl = `${siteUrl}${currentUrl}`
   const ogImage = siteUrl + '/assets/images/ogp.png'
-  const ogType = url === '/' ? 'website' : 'article'
+  const ogType = currentUrl === '/' ? 'website' : 'article'
   const twitterCard = 'summary_large_image'
   const twitterId = site.twitter?.id ? `@${site.twitter.id}` : ''
   const isNoindex = noindex || false

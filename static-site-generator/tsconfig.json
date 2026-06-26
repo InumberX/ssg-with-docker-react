@@ -22,6 +22,7 @@
     "./minista.config.ts",
     "**/*.ts",
     "**/*.tsx",
+    "**/*.d.ts",
     "postcss.config.mjs"
   ],
   "exclude": ["node_modules", "dist"]
