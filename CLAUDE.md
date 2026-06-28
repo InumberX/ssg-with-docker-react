@@ -4,11 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Static site generator built with React 19, TypeScript, and [Minista v4](https://minista.qranoko.jp/). Minista v4 runs as a wrapper around Vite — the config is a standard Vite config and SSG/asset features are provided as Vite plugins. It generates static HTML from React components — this is **not** a SPA. The main application lives in `static-site-generator/`.
+Static site generator built with React 19, TypeScript, and [Minista v4](https://minista.qranoko.jp/). Minista v4 runs as a wrapper around Vite — the config is a standard Vite config and SSG/asset features are provided as Vite plugins. It generates static HTML from React components — this is **not** a SPA. The application lives at the repository root.
 
 ## Commands
 
-All commands run from `static-site-generator/`:
+All commands run from the repository root:
 
 ```bash
 # Development
@@ -29,11 +29,6 @@ npm run typecheck        # tsc -b
 npm run lint-fix         # oxlint with auto-fix
 npm run stylelint-fix    # StyleLint with auto-fix
 npm run format-fix       # oxfmt with auto-fix
-
-# Docker alternative
-docker compose up -d
-docker compose exec node npm install
-docker compose exec node npm run dev
 ```
 
 ## Architecture
@@ -52,7 +47,7 @@ src/layouts/index.tsx (global layout: SEO meta via <Head>, global scripts, <html
 
 Pages use file-based routing in `src/pages/` and export a `metadata` object (the v4 name minista reads) for page metadata (title, description, noindex, draft, rootDir, etc.). Minista spreads each page's `metadata` (plus `url`) into the props of both the global layout and the page component. Within the component tree this object is passed around as the `metadata` prop (type `Metadata`), which Header/Footer/LayoutDefault require. The `rootDir` property sets the relative path back to root (`'./'` for root pages, `'../'` for one level deep, etc.) and is used to construct all internal URLs; the global layout reads minista's `url` prop for canonical/OG URLs.
 
-### Key Directories (under `static-site-generator/src/`)
+### Key Directories (under `src/`)
 
 - `pages/` — File-based routes; each page exports `metadata` + default component
 - `layouts/index.tsx` — Global layout minista wraps every page in (SEO `<Head>`, global scripts, CSS entry)
