@@ -103,7 +103,7 @@ Vitest with `jsdom` and `@testing-library/react`. Config in `vitest.config.ts` (
 - **Formatting**: Single quotes, no semicolons, 2-space indent, trailing commas (oxfmt, configured in `.oxfmtrc.json`)
 - **Imports**: Grouped with newlines between groups, sorted (oxfmt `sortImports`)
 - **Lint**: oxlint (`.oxlintrc.json`), TypeScript- and React-aware (`typescript`/`react` plugins)
-- **Node**: >= 22.0.0 (managed via Volta at 22.20.0)
+- **Node**: >= 24.0.0 (managed via Volta at 24.16.0)
 
 ## CI
 
