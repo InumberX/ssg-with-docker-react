@@ -1,7 +1,7 @@
 import { Head } from 'minista/head'
 import { type ReactNode } from 'react'
 
-import { LayoutPageWrapper } from '~/components/ui/layouts/PageWrapper'
+import { LayoutWrapper } from '~/components/ui/layouts/Wrapper'
 import siteInfo from '~/config/siteInfo.json'
 import { type Metadata } from '~/types/metadata'
 
@@ -58,7 +58,7 @@ const Layout = ({
         <script src={`${rootDir}assets/js/lib/jquery.min.js`} defer />
         <script src={`${rootDir}assets/js/common.js`} defer />
       </Head>
-      <LayoutPageWrapper>{children}</LayoutPageWrapper>
+      <LayoutWrapper>{children}</LayoutWrapper>
     </>
   )
 }

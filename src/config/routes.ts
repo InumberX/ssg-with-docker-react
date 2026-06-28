@@ -21,6 +21,6 @@ export const routes: {
     title: '',
     description: '',
     menuText: '',
-    url: ({ rootDir }) => `${rootDir}example`,
+    url: ({ rootDir }) => `${rootDir}example/`,
   },
-}
+} as const

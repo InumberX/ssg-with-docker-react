@@ -1,9 +1,5 @@
 @layer component-ui-low {
   .LayoutPageWrapper {
-    display: flex;
-    flex-direction: column;
-    min-block-size: 100vh;
-    min-block-size: 100svh;
-    position: relative;
+    padding-block-start: var(--layout-header-height);
   }
 }

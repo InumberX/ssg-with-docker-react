@@ -32,7 +32,7 @@ describe('Header', () => {
     test('rootDirを基準にリンク先が設定されている', () => {
       const links = result.container.querySelectorAll('.LayoutHeader__link')
       expect(links[0]?.getAttribute('href')).toBe('./')
-      expect(links[1]?.getAttribute('href')).toBe('./example')
+      expect(links[1]?.getAttribute('href')).toBe('./example/')
     })
   })
 
@@ -45,7 +45,7 @@ describe('Header', () => {
     test('rootDirに応じてリンク先が変化する', () => {
       const links = result.container.querySelectorAll('.LayoutHeader__link')
       expect(links[0]?.getAttribute('href')).toBe('../')
-      expect(links[1]?.getAttribute('href')).toBe('../example')
+      expect(links[1]?.getAttribute('href')).toBe('../example/')
     })
   })
 })
