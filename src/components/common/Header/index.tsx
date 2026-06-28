@@ -1,3 +1,4 @@
+import { PrimitiveButton } from '~/components/primitives/buttons/PrimitiveButton'
 import { LayoutInner } from '~/components/ui/layouts/Inner'
 import { routes } from '~/config/routes'
 import { type Metadata } from '~/types/metadata'
@@ -14,24 +15,24 @@ export const Header = ({ metadata }: HeaderProps) => {
         <div className='Container'>
           <ul className='Items'>
             <li className='Item'>
-              <a
-                href={routes.top.url({
+              <PrimitiveButton
+                url={routes.top.url({
                   rootDir: metadata.rootDir,
                 })}
                 className='Link'
               >
                 トップページ
-              </a>
+              </PrimitiveButton>
             </li>
             <li className='Item'>
-              <a
-                href={routes.example.url({
+              <PrimitiveButton
+                url={routes.example.url({
                   rootDir: metadata.rootDir,
                 })}
                 className='Link'
               >
                 下層ページ
-              </a>
+              </PrimitiveButton>
             </li>
           </ul>
         </div>

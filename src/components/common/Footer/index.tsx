@@ -1,3 +1,4 @@
+import { LayoutInner } from '~/components/ui/layouts/Inner'
 import { type Metadata } from '~/types/metadata'
 
 type FooterProps = {
@@ -5,5 +6,9 @@ type FooterProps = {
 }
 
 export const Footer = (_: FooterProps) => {
-  return <footer className='LayoutFooter'>フッター</footer>
+  return (
+    <footer className='LayoutFooter'>
+      <LayoutInner>フッター</LayoutInner>
+    </footer>
+  )
 }
