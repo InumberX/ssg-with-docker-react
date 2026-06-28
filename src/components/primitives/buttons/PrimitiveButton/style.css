@@ -1,5 +1,5 @@
 @layer component-primitives {
-  @scope (.PrimitiveButton) to (.PrimitiveButton) {
+  .PrimitiveButton {
     align-items: center;
     background-color: transparent;
     block-size: auto;

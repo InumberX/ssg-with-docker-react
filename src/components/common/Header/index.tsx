@@ -12,24 +12,24 @@ export const Header = ({ metadata }: HeaderProps) => {
   return (
     <header className='LayoutHeader'>
       <LayoutInner>
-        <div className='Container'>
-          <ul className='Items'>
-            <li className='Item'>
+        <div className='LayoutHeader__container'>
+          <ul className='LayoutHeader__items'>
+            <li className='LayoutHeader__item'>
               <PrimitiveButton
                 url={routes.top.url({
                   rootDir: metadata.rootDir,
                 })}
-                className='Link'
+                className='LayoutHeader__link'
               >
                 トップページ
               </PrimitiveButton>
             </li>
-            <li className='Item'>
+            <li className='LayoutHeader__item'>
               <PrimitiveButton
                 url={routes.example.url({
                   rootDir: metadata.rootDir,
                 })}
-                className='Link'
+                className='LayoutHeader__link'
               >
                 下層ページ
               </PrimitiveButton>
