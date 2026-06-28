@@ -1,5 +1,5 @@
 {
-  "name": "static-site-generator-with-docker-react",
+  "name": "ssg-with-react",
   "version": "2.0.0",
   "private": true,
   "type": "module",
