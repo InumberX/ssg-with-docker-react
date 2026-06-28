@@ -1,9 +1,10 @@
 @layer component-ui-low {
-  .LayoutPageWrapper {
+  @scope (.LayoutPageWrapper) to (.LayoutPageWrapper) {
     display: flex;
     flex-direction: column;
     min-block-size: 100vh;
     min-block-size: 100svh;
+    padding-block-start: var(--layout-header-height);
     position: relative;
   }
 }

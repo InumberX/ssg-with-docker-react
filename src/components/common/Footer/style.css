@@ -1,5 +1,5 @@
 @layer component-common {
-  .LayoutFooter {
+  @scope (.LayoutFooter) to (.LayoutFooter) {
     margin-block-start: auto;
     position: relative;
     z-index: var(--z-index-footer);

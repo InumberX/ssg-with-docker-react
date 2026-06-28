@@ -1,5 +1,5 @@
 @layer component-ui-low {
-  .LayoutSection {
+  @scope (.LayoutSection) to (.LayoutSection) {
     padding-block: 24px;
     padding-inline: 0;
 
