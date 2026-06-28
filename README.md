@@ -1,6 +1,6 @@
 # Static Site Generator with React
 
-![GitHub release (with filter)](https://img.shields.io/github/v/release/InumberX/ssg-with-docker-react) ![GitHub Release Date - Published_At](https://img.shields.io/github/release-date/InumberX/ssg-with-docker-react) ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/InumberX/ssg-with-docker-react) ![GitHub issues](https://img.shields.io/github/issues/InumberX/ssg-with-docker-react) ![GitHub closed issues](https://img.shields.io/github/issues-closed/InumberX/ssg-with-docker-react) ![GitHub pull requests](https://img.shields.io/github/issues-pr/InumberX/ssg-with-docker-react) ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/InumberX/ssg-with-docker-react)
+![GitHub release (with filter)](https://img.shields.io/github/v/release/InumberX/ssg-with-react) ![GitHub Release Date - Published_At](https://img.shields.io/github/release-date/InumberX/ssg-with-react) ![GitHub last commit (by committer)](https://img.shields.io/github/last-commit/InumberX/ssg-with-react) ![GitHub issues](https://img.shields.io/github/issues/InumberX/ssg-with-react) ![GitHub closed issues](https://img.shields.io/github/issues-closed/InumberX/ssg-with-react) ![GitHub pull requests](https://img.shields.io/github/issues-pr/InumberX/ssg-with-react) ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/InumberX/ssg-with-react)
 
 ## Development with Node.js
 
